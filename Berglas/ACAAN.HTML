@@ -18,33 +18,33 @@
 			loadHTML("MD.html", "content");
 			document.getElementById("buttons").style.display = "none";
 			document.getElementById("text").style.display = "none";
+			document.getElementById("welcome").style.display = "none";
 		}
 
 		function clickButton2() {
 			loadHTML("方案2.html", "content");
 			document.getElementById("buttons").style.display = "none";
 			document.getElementById("text").style.display = "none";
+			document.getElementById("welcome").style.display = "none";
 		}
 
 		function clickButton3() {
 			loadHTML("方案3.html", "content");
 			document.getElementById("buttons").style.display = "none";
 			document.getElementById("text").style.display = "none";
+			document.getElementById("welcome").style.display = "none";
 		}
 	</script>
 </head>
 <body>
-	<div id="text">
-		<h1>歡迎來到細數巴格拉斯</h1>
-	</div>
+	<h1>歡迎來到細數巴格拉斯</h1>
+	<div id="welcome">歡迎來到細數巴格拉斯</div>
+	<div id="text">請選擇你要用的牌序</div>
 	<div id="buttons">
 		<button onclick="clickButton1()">MD</button>
 		<button onclick="clickButton2()">方案2</button>
 		<button onclick="clickButton3()">方案3</button>
 	</div>
 	<div id="content"></div>
-	<script>
-		document.getElementById("text").style.display = "none";
-	</script>
 </body>
 </html>
