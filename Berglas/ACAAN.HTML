@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>細數巴格拉斯</title>
+	<script>
+		function loadHTML(file, elementId) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", file, true);
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === 4) {
+					document.getElementById(elementId).innerHTML = xhr.responseText;
+				}
+			}
+			xhr.send();
+		}
+
+		function clickButton1() {
+			loadHTML("MD.html", "content");
+		}
+
+		function clickButton2() {
+			loadHTML("方案2.html", "content");
+		}
+
+		function clickButton3() {
+			loadHTML("方案3.html", "content");
+		}
+	</script>
+</head>
+<body>
+	<h1>歡迎來到細數巴格拉斯</h1>
+      <div id="content">請選擇你要用的牌序</div>
+	<button onclick="clickButton1()">MD</button>
+	<button onclick="clickButton2()">方案2</button>
+	<button onclick="clickButton3()">方案3</button>
+	<div id="content"></div>
+</body>
+</html>
