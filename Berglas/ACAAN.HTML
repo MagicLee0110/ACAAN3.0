@@ -8,44 +8,39 @@
 			xhr.open("GET", file, true);
 			xhr.onreadystatechange = function() {
 				if (xhr.readyState === 4) {
-					// 隱藏先前的內容
-					document.querySelectorAll(".content").forEach((element) => {
-						element.style.display = "none";
-					});
-					// 顯示當前所選網頁的內容
 					document.getElementById(elementId).innerHTML = xhr.responseText;
-					document.getElementById(elementId).style.display = "block";
 				}
 			}
 			xhr.send();
 		}
 
 		function clickButton1() {
-			loadHTML("MD.html", "md-content");
+			loadHTML("MD.html", "content");
+			document.getElementById("buttons").style.display = "none";
+			document.getElementById("text").style.display = "none";
 		}
 
 		function clickButton2() {
-			loadHTML("方案2.html", "plan2-content");
+			loadHTML("方案2.html", "content");
+			document.getElementById("buttons").style.display = "none";
+			document.getElementById("text").style.display = "none";
 		}
 
 		function clickButton3() {
-			loadHTML("方案3.html", "plan3-content");
+			loadHTML("方案3.html", "content");
+			document.getElementById("buttons").style.display = "none";
+			document.getElementById("text").style.display = "none";
 		}
 	</script>
-	<style>
-		.content {
-			display: none;
-		}
-	</style>
 </head>
 <body>
 	<h1>歡迎來到細數巴格拉斯</h1>
-	<div id="content">請選擇你要用的牌序</div>
-	<button onclick="clickButton1()">MD</button>
-	<button onclick="clickButton2()">方案2</button>
-	<button onclick="clickButton3()">方案3</button>
-	<div class="content" id="md-content"></div>
-	<div class="content" id="plan2-content"></div>
-	<div class="content" id="plan3-content"></div>
+	<div id="text">請選擇你要用的牌序</div>
+	<div id="buttons">
+		<button onclick="clickButton1()">MD</button>
+		<button onclick="clickButton2()">方案2</button>
+		<button onclick="clickButton3()">方案3</button>
+	</div>
+	<div id="content"></div>
 </body>
 </html>
